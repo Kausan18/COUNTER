@@ -1,0 +1,28 @@
+#Counter{
+    display:block;
+    text-align: center;
+    font-size: 5em;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center; /* center the buttons horizontally */
+    gap: 30px; /* gap between buttons */
+    margin-top: 20px; /* space above the buttons */    
+}
+
+.Button{
+    
+    border:2px solid black;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(33, 58, 221);
+    cursor: pointer;
+    transition: background-color 0.25s;
+    padding: 10px 20px;
+    font-size: 1em;   
+}
+
+.Button:hover{
+    background-color: rgb(68, 187, 226);
+}

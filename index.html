@@ -3,21 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Forecast App</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: aquamarine;">
-    <p>My first Pull Request</p>
-    <h1 align="center">COUNTER PROGRAM</h1>
-    <label id="Counter">0</label><br><br>
-    <div id="buttons">
-        <button id="increasesBTN" class="Button">INCREASE</button>
-        <button id="decreasesBTN"class="Button">DECREASE</button>
-        <button id="resetBTN"class="Button">RESET</button>
-    
+<body>
+    <div class="weather-popup">
+        <div class="weather-header">
+            <h1>🌤️ Weather Forecast</h1>
+            <div class="location-input">
+                <input type="text" id="cityInput" placeholder="Enter city name..." value="London">
+                <button id="searchBtn">🔍</button>
+            </div>
+        </div>
+
+        <div class="current-weather">
+            <div class="weather-icon-container">
+                <img id="weatherIcon" src="" alt="Weather Icon">
+            </div>
+            <h2 id="cityName">Loading...</h2>
+            <div class="temperature">
+                <span id="currentTemp">--</span>°C
+            </div>
+            <p id="weatherDesc">--</p>
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="detail-icon">💧</span>
+                    <span id="humidity">--%</span>
+                    <span>Humidity</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-icon">💨</span>
+                    <span id="windSpeed">-- km/h</span>
+                    <span>Wind</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="rain-alert" id="rainAlert">
+            <div class="alert-icon">🌧️</div>
+            <div class="alert-text">
+                <h3>Rain Expected!</h3>
+                <p id="rainMessage">Check the forecast below</p>
+            </div>
+        </div>
+
+        <div class="forecast-section">
+            <h3>📅 Today's Forecast</h3>
+            
+            <div class="forecast-cards">
+                <div class="forecast-card morning">
+                    <div class="time-label">
+                        <span class="clock-icon">🕙</span>
+                        <span>10:00 AM</span>
+                    </div>
+                    <div class="forecast-info">
+                        <img id="morningIcon" src="" alt="Morning Weather">
+                        <span id="morningTemp">--°C</span>
+                        <span id="morningDesc">--</span>
+                        <span id="morningRain" class="rain-indicator">☔ No rain</span>
+                    </div>
+                </div>
+
+                <div class="forecast-card evening">
+                    <div class="time-label">
+                        <span class="clock-icon">🕔</span>
+                        <span>5:00 PM</span>
+                    </div>
+                    <div class="forecast-info">
+                        <img id="eveningIcon" src="" alt="Evening Weather">
+                        <span id="eveningTemp">--°C</span>
+                        <span id="eveningDesc">--</span>
+                        <span id="eveningRain" class="rain-indicator">☔ No rain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="api-note">
+            <p>⚠️ Get your FREE API key from <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap.org</a></p>
+            <div class="api-key-input">
+                <input type="text" id="apiKeyInput" placeholder="Paste your API key here...">
+                <button id="saveKeyBtn">Save Key</button>
+            </div>
+            <p id="apiStatus" class="api-status"></p>
+        </div>
     </div>
-        
-    
-</body>   
-<script src="first.js"></script>
-</html> 
+
+    <script src="app.js"></script>
+</body>
+</html>
